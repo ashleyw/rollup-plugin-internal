@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should do nothing if passed empty array 1`] = `
+Object {
+  "code": "import foo from 'foo';
+import bar from 'bar';
+
+var baz = 'baz';
+
+var index = \`\${foo}\${bar}\${baz}\`;
+
+export default index;
+",
+  "modules": Array [
+    "node_modules/baz/baz.js",
+    "node_modules/baz/index.js",
+  ],
+}
+`;
+
+exports[`should override autoExternal plugin 1`] = `
+Object {
+  "code": "import bar from 'bar';
+import baz from 'baz';
+
+var foo = 'foo';
+
+var index = \`\${foo}\${bar}\${baz}\`;
+
+export default index;
+",
+  "modules": Array [
+    "node_modules/foo/foo.js",
+    "node_modules/foo/index.js",
+  ],
+}
+`;
+
+exports[`should override external array option 1`] = `
+Object {
+  "code": "var foo = 'foo';
+
+var bar = 'bar';
+
+var bar_1 = bar;
+
+var baz = 'baz';
+
+var index = \`\${foo}\${bar_1}\${baz}\`;
+
+export default index;
+",
+  "modules": Array [
+    "node_modules/foo/foo.js",
+    "node_modules/foo/index.js",
+    "node_modules/bar/bar.js",
+    "node_modules/bar/bar.js?commonjs-proxy",
+    "node_modules/bar/index.js",
+    "node_modules/baz/baz.js",
+    "node_modules/baz/index.js",
+  ],
+}
+`;
+
+exports[`should override external function option 1`] = `
+Object {
+  "code": "var foo = 'foo';
+
+var bar = 'bar';
+
+var bar_1 = bar;
+
+var baz = 'baz';
+
+var index = \`\${foo}\${bar_1}\${baz}\`;
+
+export default index;
+",
+  "modules": Array [
+    "node_modules/foo/foo.js",
+    "node_modules/foo/index.js",
+    "node_modules/bar/bar.js",
+    "node_modules/bar/bar.js?commonjs-proxy",
+    "node_modules/bar/index.js",
+    "node_modules/baz/baz.js",
+    "node_modules/baz/index.js",
+  ],
+}
+`;

@@ -1,0 +1,64 @@
+{
+  "name": "rollup-plugin-internal",
+  "version": "1.0.4",
+  "description": "Rollup plugin to explicitly mark dependencies as internal",
+  "keywords": ["dependencies", "internal", "plugin", "rollup"],
+  "homepage": "https://github.com/ashleyw/rollup-plugin-internal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashleyw/rollup-plugin-internal.git"
+  },
+  "license": "MIT",
+  "author": "Ashley Williams <hi@ashleyw.co.uk>",
+  "files": ["build", "LICENCE"],
+  "main": "build/index.js",
+  "scripts": {
+    "build": "$(yarn bin tsc)",
+    "eslint": "eslint . --ext .ts,.tsx",
+    "prepublishOnly": "yarn test && yarn build",
+    "test": "$(yarn bin jest) --modulePaths=src/__tests__/__fixtures__/node_modules"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  },
+  "dependencies": {
+    "safe-resolve": "^1.0.0",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.1.0",
+    "@commitlint/config-conventional": "8.1.0",
+    "@types/eslint": "4.16.6",
+    "@types/eslint-plugin-prettier": "2.2.0",
+    "@types/jest": "~24.0.16",
+    "@types/prettier": "1.18.0",
+    "@typescript-eslint/eslint-plugin": "1.13.0",
+    "@typescript-eslint/parser": "1.13.0",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-standard": "*",
+    "eslint-plugin-unicorn": "*",
+    "husky": "*",
+    "jest": "~24.8.0",
+    "prettier": "*",
+    "rollup": "~1.18.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "ts-jest": "~24.0.2",
+    "typescript": "~3.5.2"
+  },
+  "peerDependencies": {
+    "rollup": ">=0.45.2"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}

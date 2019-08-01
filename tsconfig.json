@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./build",
+    "module": "commonjs",
+    "target": "es2017",
+    "baseUrl": ".",
+    "lib": ["es2017"],
+    "sourceMap": true,
+    "composite": true,
+    "incremental": true,
+    "jsx": "react",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "types": ["jest", "node"]
+  },
+  "include": ["./src"],
+  "exclude": ["**/node_modules", "**/build", "**/__tests__"]
+}
